@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const Navbar = () => {
     return (
-        <div className='bg-main-dark-bg sticky top-0'>
-            <div className='container mx-auto flex items-center justify-between text-white  py-[1.5rem]'>
+        <div className='bg-main-dark-bg sticky top-0 z-[100]'>
+            <div className='container mx-auto  flex items-center justify-between text-white py-[0.1rem] md:py-[1.5rem]'>
                 <Image
                     src={MainLogo}
                     alt="Growth Gen Ai Logo"

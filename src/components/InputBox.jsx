@@ -12,8 +12,8 @@ const InputBox = () => {
                     <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,#E50914_0%,transparent_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     </span>
                 </span>
-                <div className="relative px-[1.5rem] py-[0.6rem] flex space-x-2 items-center z-10 rounded-full bg-main-red-cta hover:bg-main-red-cta/70 ring-1 ring-white/10 transition-opacity duration-500">
-                    <span className="text-[1rem] tracking-wide">Book Next Slot</span>
+                <div className="relative px-[1.5rem] py-[0.6rem] flex space-x-2 items-center justify-center z-10 rounded-full bg-main-red-cta hover:bg-main-red-cta/70 ring-1 ring-white/10 transition-opacity duration-500">
+                    <span className="text-[1rem] tracking-wide text-center">Book Next Slot</span>
 
                 </div>
                 <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-red-500/0 via-main-red-cta to-red-500/0 transition-opacity duration-500 group-hover:opacity-40">

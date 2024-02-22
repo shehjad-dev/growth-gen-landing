@@ -45,7 +45,7 @@ export const AnimatedGradientBorder = ({ children, showAnimatedBorder }) => {
                 "--border-color": showAnimatedBorder ? "linear-gradient(var(--angle), #E50914, #000E17)" : "transparent",
                 "--bg-color": "linear-gradient(#131219, #131219)",
             }}
-            className={`flex items-center justify-center rounded-full p-2 border-2 border-[#0000] [background:padding-box_var(--bg-color),border-box_var(--border-color)]`}
+            className={`flex items-center justify-center rounded-full p-[0.25rem] md:p-2 border-2 border-[#0000] [background:padding-box_var(--bg-color),border-box_var(--border-color)]`}
         >
             {children}
         </div>

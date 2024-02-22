@@ -17,12 +17,16 @@ const HeroImg = () => {
         if (window.innerWidth < 768) {
             await animate("#hero-user-sub-image-mobile", { opacity: 1, scale: 1.1 });
 
+
         }
         //await animate("#hero-user-sub-image-mobile", { opacity: 1, scale: 1.1 });
         // await animate("#growth-gen-sub-image", { opacity: 1, scale: 1.1 });
         //await animate("#hero-money-sub-image", { opacity: 1, delay: 1000, });
 
+
         setShowAnimatedBorder(true);
+        await animate("#hero-growth-gen-sub-image", { opacity: 1, scale: 1.1 });
+
         if (window.innerWidth < 768) {
             await animate("#hero-user-sub-image-mobile", { opacity: 0, scale: 1 }, { delay: 1 });
 
@@ -55,29 +59,7 @@ const HeroImg = () => {
     }, [])
     return (
         <div ref={scope} className="flex flex-col items-center gap-[0.34rem] md:gap-[1rem] border-2 border-main-red-cta border-opacity-30 w-[60vw] h-[60vw] md:w-[500px] md:h-[500px] rounded-full bg-[#FF000D]/10">
-            {/* <Image
-                src={HeroUsersSubImage}
-                alt="Growth Gen Ai Logo"
-                className=""
-                width={160}
-                height={138}
 
-                priority
-                id="hero-user-sub-image"
-                style={{ opacity: "1" }}
-            />
- */}
-            {/* <Image
-                src={HeroUsersSubImage}
-                alt="Growth Gen Ai Logo"
-                className=""
-
-                sizes="(max-width: 768px) 80px, 69px, (min-width: 769px) 160px, 138px"
-                priority
-                id="hero-money-sub-image"
-                style={{ opacity: "1" }}
-
-            /> */}
             <Image
                 src={HeroUsersSubImage}
                 alt="HeroUsersSubImage"
@@ -105,20 +87,21 @@ const HeroImg = () => {
             />
 
 
+            <div id="hero-growth-gen-sub-image" style={{ opacity: "0" }} className='mt-[0.5rem]'>
+                <AnimatedGradientBorder showAnimatedBorder={showAnimatedBorder}>
+                    <Image
+                        src={HeroGrowthGenSubImage}
+                        alt="HeroGrowthGenSubImage"
+                        className=""
 
-            <AnimatedGradientBorder showAnimatedBorder={showAnimatedBorder}>
-                <Image
-                    src={HeroGrowthGenSubImage}
-                    alt="HeroGrowthGenSubImage"
-                    className=""
+                        sizes="(max-width: 768px) 130px, 48.5px"
+                        /* sizes="(max-width: 768px) 130px, 48.5px, (min-width: 769px) 260px, 97px" */
+                        priority
 
-                    sizes="(max-width: 768px) 130px, 48.5px"
-                    /* sizes="(max-width: 768px) 130px, 48.5px, (min-width: 769px) 260px, 97px" */
-                    priority
-                    id="hero-growth-gen-sub-image"
 
-                />
-            </AnimatedGradientBorder>
+                    />
+                </AnimatedGradientBorder>
+            </div>
 
 
 
