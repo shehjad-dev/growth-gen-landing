@@ -1,0 +1,48 @@
+/* Book3D.module.css */
+.bookContainer {
+    perspective: 600px;
+    width: fit-content;
+    height: fit-content;
+    margin: 20px auto;
+}
+
+.book {
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    transition: transform 1s;
+}
+
+.front,
+.back,
+.spine {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.front,
+.back {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.spine {
+    width: 20px;
+    height: 300px;
+    background-color: #666;
+    transform: rotateY(90deg) translateX(-10px);
+    z-index: 1;
+}
+
+.back {
+    transform: rotateY(180deg) translateX(-200px);
+}

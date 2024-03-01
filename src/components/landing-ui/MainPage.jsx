@@ -9,7 +9,7 @@ const MainPage = () => {
         <div className="bg-main-dark-bg min-h-[100vh]">
             <Navbar />
             <HeroSection />
-            <ServicesSection />
+            {/* <ServicesSection /> */}
         </div>
     )
 }
