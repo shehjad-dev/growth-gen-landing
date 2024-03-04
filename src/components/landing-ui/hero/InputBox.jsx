@@ -97,7 +97,7 @@ const InputBox = () => {
                 value={emailInput}
                 onChange={handleEmailInputChange}
                 placeholder='Your Email'
-                className={`h-[45px] text-white px-[1.4rem] bg-transparent border-[2px] ${!isEmailValid ? "border-red-500" : "border-slate-700"} rounded-[40px] focus:border-slate-500 focus:outline-none`}
+                className={`h-[45px] bg-main-dark-bg text-white px-[1.4rem] bg-transparent border-[2px] ${!isEmailValid ? "border-red-500" : "border-slate-700"} rounded-[40px] focus:border-slate-500 focus:outline-none`}
             />
             <button onClick={handleEmailSubmission} className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
                 <span className="absolute inset-0 overflow-hidden rounded-full">

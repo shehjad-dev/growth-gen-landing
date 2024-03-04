@@ -2,21 +2,61 @@ import React from 'react'
 import InputBox from './InputBox'
 import HeroImg from './HeroImg'
 import MobileHeroImg from './MobileHeroImg'
+import { motion } from 'framer-motion'
 
 const HeroSection = () => {
+    const cardVariants = {
+        offscreen: {
+            opacity: 0,
+        },
+        onscreen: {
+            opacity: 1,
+
+            /* rotate: -10, */
+            transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 1
+            }
+        }
+    };
     return (
         <div className="text-white h-[80vh] md:h-[600px] flex items-center">
             <div className="container mx-auto flex md:flex-row flex-col-reverse items-center gap-[2rem] md:justify-between md:px-0 px-[20px]">
                 <div>
-                    <div>
-                        <h1 className="text-2xl md:text-6xl max-w-[600px] md:text-left text-center">Get 20% more clients
-                            in the next quarter</h1>
+                    <motion.div
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.8 }}
+                    >
+                        <motion.h1
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 30 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
 
-                        <p className="text-[1.1rem] my-[0.4rem] md:text-left text-center">(3 months)</p>
-                    </div>
+
+                            className="text-2xl md:text-6xl max-w-[600px] md:text-left text-center"
+                        >
+                            Get 20% more clients
+                            in the next quarter
+                        </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 30 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="text-[1.1rem] my-[0.4rem] md:text-left text-center"
+                        >
+                            (3 months)
+                        </motion.p>
+                    </motion.div>
 
 
-                    <div className="py-[1.4rem]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 30 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className="py-[1.4rem]"
+                    >
                         <div className="flex items-center md:justify-start justify-center gap-[1rem]">
                             <span className="flex h-4 w-4 top-0 right-0 -mr-1 relative items-center justify-center">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-main-red-cta opacity-75"></span>
@@ -27,7 +67,7 @@ const HeroSection = () => {
 
                         <InputBox />
 
-                    </div>
+                    </motion.div>
                 </div>
 
                 <div className="md:inline-flex hidden">
