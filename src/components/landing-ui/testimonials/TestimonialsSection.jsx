@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
                     /* initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -2 }}
                     transition={{ duration: 1 }} */
-                    className="text-[1.1rem] my-[0.4rem] md:text-center text-center max-w-[350px] hidden"
+                    className="text-[1.1rem] my-[0.4rem] md:text-center text-center md:max-w-[350px] hidden"
                 >
                     Our network of satistfied customers are working in various industries with ease and comfort
                 </p>
