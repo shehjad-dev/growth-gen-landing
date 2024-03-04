@@ -104,6 +104,7 @@ const ServicesSection = () => {
                     className='flex flex-wrap gap-[60px]  items-center justify-center mt-[3rem]'>
                     {myServicesData.map((item, index) => (
                         <motion.div
+                            key={index + 1}
                             variants={gridSquareVariants}
                             /* variants={gridChildVariants} */
                             className='flex flex-col items-center'>

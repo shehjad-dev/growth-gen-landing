@@ -1,5 +1,4 @@
 import React from 'react'
-import { Example } from './Example'
 import Accordion from './Accordion'
 
 const questionsList = [
@@ -41,7 +40,7 @@ const FaqSection = () => {
                 <div className="accordion flex flex-col gap-[1rem] mt-[3.5rem]">
                     {
                         questionsList.map((item, index) => (
-                            <Accordion title={item?.question}>
+                            <Accordion title={item?.question} key={index + 1}>
                                 <p>{item?.answer}</p>
                             </Accordion>
                         ))
