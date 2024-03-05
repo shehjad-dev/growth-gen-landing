@@ -18,11 +18,11 @@ const pricingData = [
                 details: "",
             },
             {
-                title: "Chatbots Integrations(whatsapp, website and more)",
+                title: "Chatbots Integrations (whatsapp, website and more)",
                 details: "",
             },
             {
-                title: "Landing Page(SEO + Convertible)",
+                title: "Landing Page (SEO + Convertible)",
                 details: "",
             },
             {
@@ -30,7 +30,7 @@ const pricingData = [
                 details: "",
             },
             {
-                title: "Priority Support(Whatsapp)",
+                title: "Priority Support (Whatsapp)",
                 details: "",
             },
 
@@ -45,7 +45,7 @@ const pricingData = [
 
         sellingPoints: [
             {
-                title: "Basic Chatbots(QnA + Support)",
+                title: "Basic Chatbots (QnA + Support)",
                 details: "",
             },
             {
@@ -54,15 +54,15 @@ const pricingData = [
             },
 
             {
-                title: "Custom Automations(3 Custom Automations and Integrations)",
+                title: "Custom Automations (3 Custom Automations and Integrations)",
                 details: "",
             },
             {
-                title: "Landing Page(SEO + Convertible)",
+                title: "Landing Page (SEO + Convertible)",
                 details: "",
             },
             {
-                title: "Branding(Logo, Brand, Moto)",
+                title: "Branding (Logo, Brand, Moto)",
                 details: "",
             },
             {
@@ -70,7 +70,7 @@ const pricingData = [
                 details: "",
             },
             {
-                title: "Priority Support(Whatsapp)",
+                title: "Priority Support (Whatsapp)",
                 details: "",
             },
         ]
@@ -83,7 +83,7 @@ const pricingData = [
 
         sellingPoints: [
             {
-                title: "Basic Chatbots(QnA + Support)",
+                title: "Basic Chatbots (QnA + Support)",
                 details: "",
             },
             {
@@ -92,15 +92,15 @@ const pricingData = [
             },
 
             {
-                title: "Custom Automations(10 Custom Automations and Integrations)",
+                title: "Custom Automations (10 Custom Automations and Integrations)",
                 details: "",
             },
             {
-                title: "Landing Page(SEO + Convertible)",
+                title: "Landing Page (SEO + Convertible)",
                 details: "",
             },
             {
-                title: "Branding(Logo, Brand, Moto)",
+                title: "Branding (Logo, Brand, Moto)",
                 details: "",
             },
             {
@@ -119,11 +119,8 @@ const pricingData = [
                 title: "3 months content plan",
                 details: "",
             },
-
-
-
             {
-                title: "Priority Support(Whatsapp)",
+                title: "Priority Support (Whatsapp)",
                 details: "",
             },
         ]
@@ -186,9 +183,9 @@ const PricingSection = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -2 }}
                     transition={{ duration: 0.2 }}
-                    className="text-2xl md:text-5xl max-w-[600px] md:text-center text-center"
+                    className="text-2xl md:text-5xl max-w-[600px] md:text-center text-center mb-[1.2rem]"
                 >
-                    Unleash Your Growth
+                    Unleash Your <span className='px-[0.7rem] text-white py-[0.35rem] rounded-md bg-main-red-cta/50 border-main-red-cta/30 border-[1px] w-fit '>Growth</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: -10 }}
@@ -222,15 +219,15 @@ const PricingSection = () => {
                                 </div>
 
                                 <div className='flex flex-col items-center'>
-                                    <p>Continues at</p>
-                                    <p><span className='text-xl text-main-red-cta'>{item?.monthlyFee}$</span> per month</p>
+                                    {/* <p>Continues at</p>
+                                    <p><span className='text-xl text-main-red-cta'>{item?.monthlyFee}$</span> per month</p> */}
                                 </div>
 
-                                <div className='mt-[1rem] mb-[2rem] flex flex-col gap-[0.6rem]'>
+                                <div className='mt-[1rem] mb-[2rem] flex flex-col items-center gap-[0.6rem]'>
                                     {item.sellingPoints.map((sellingPoint, sellingIndex) => (
-                                        <div className='flex flex-row items-start gap-[0.5rem]' key={sellingIndex + 1}>
+                                        <div className='flex flex-row items-start gap-[0.5rem] w-[80%]' key={sellingIndex + 1}>
                                             <HiOutlineShieldCheck size={22} className='text-slate-200' />
-                                            <p className='w-[200px]'>{sellingPoint?.title}</p>
+                                            <p className='w-[fit-content]'>{sellingPoint?.title}</p>
 
 
                                         </div>
@@ -250,12 +247,19 @@ const PricingSection = () => {
 
                                 </div>
 
-                                <button /* onClick={handleEmailSubmission} */ className="bg-slate-800 mb-[1rem] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
+                                <p className='text-center text-sm font-medium text-slate-300 leading-[22px] mb-[0.5rem] px-[0.7rem]'>
+                                    All prices are EXCLUDING Monthly Charge, which is projected to be
+                                    {" "}<span className='px-[0.7rem] text-white py-[0.2rem] rounded-md bg-main-red-cta/50 border-main-red-cta/30 border-[1px] w-fit '>
+                                        {item?.monthlyFee}$ /month
+                                    </span>{" "}. Our team will work with you to ensure you receive a custom solution for your business which includes all development work, consulting and integration
+                                </p>
+
+                                <button /* onClick={handleEmailSubmission} */ className="bg-slate-800 mb-[1rem] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block hover:scale-[1.1] transition-all duration-75 ease-in-out">
                                     <span className="absolute inset-0 overflow-hidden rounded-full">
                                         <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,#E50914_0%,transparent_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                                         </span>
                                     </span>
-                                    <div className="relative px-[1.5rem] py-[0.6rem] flex space-x-2 items-center justify-center z-10 rounded-full bg-main-red-cta hover:bg-main-red-cta/70 ring-1 ring-white/10 transition-opacity duration-500">
+                                    <div className="relative px-[1.5rem] py-[0.6rem] flex space-x-2 items-center justify-center z-10 rounded-full bg-main-red-cta hover:bg-main-red-cta/70  ring-1 ring-white/10 transition-opacity duration-500">
                                         <span className="text-[1rem] tracking-wide text-center flex items-center justify-center gap-[1rem] w-[150px]">
                                             Book Next Slot
                                         </span>

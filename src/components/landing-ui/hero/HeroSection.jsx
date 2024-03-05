@@ -22,7 +22,7 @@ const HeroSection = () => {
     };
     return (
         <div className="text-white h-[80vh] md:h-[600px] flex items-center">
-            <div className="container mx-auto flex md:flex-row flex-col-reverse items-center gap-[2rem] md:justify-between md:px-0 px-[20px]">
+            <div className="container mx-auto md:mt-[2rem] mt-[1.5rem] flex md:flex-row flex-col-reverse items-center gap-[2rem] md:justify-between md:px-0 px-[20px]">
                 <div>
                     <motion.div
                         whileInView="onscreen"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 
@@ -83,9 +84,9 @@ export const InfiniteMovingCards = ({
                             background:
                                 "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
                         }}
-                        key={item.name}
+                        key={item.person}
                     >
-                        <blockquote>
+                        <blockquote className="h-[100%] flex flex-col justify-between">
                             <div
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
@@ -94,12 +95,20 @@ export const InfiniteMovingCards = ({
                                 {item.quote}
                             </span>
                             <div className="relative z-20 mt-6 flex flex-row items-center">
+                                {/* <Image
+                                    src={item.logo}
+                                    alt={item.company}
+                                    className=""
+                                    width={60}
+                                    height={60}
+                                    priority
+                                /> */}
                                 <span className="flex flex-col gap-1">
                                     <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                                        {item.name}
+                                        {item.person}
                                     </span>
                                     <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                                        {item.title}
+                                        {item.designation} at {item.company}
                                     </span>
                                 </span>
                             </div>

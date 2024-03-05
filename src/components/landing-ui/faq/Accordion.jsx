@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlinePlus, HiOutlineMinus } from 'react-icons/hi';
 
+
 const Accordion = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
