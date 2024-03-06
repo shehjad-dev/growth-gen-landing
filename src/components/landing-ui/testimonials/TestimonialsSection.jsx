@@ -1,14 +1,15 @@
 import { InfiniteMovingCards } from '@/components/atoms/InfiniteMovingCards'
 import React from 'react'
 import MainLogo from '@/assets/growthGenAiWhiteLogo.svg'
-import adversionXLogo from '@/assets/clientsLogos/adversionXLogo.jpg'
-import askjiffyLogo from '@/assets/clientsLogos/askjiffyLogo.PNG'
-import babycareLogo from '@/assets/clientsLogos/babycareLogo.jpg'
-import chasisDepotLLCLogo from '@/assets/clientsLogos/chasisDepotLLCLogo.png'
-import golflandsLogo from '@/assets/clientsLogos/golflandsLogo.jpg'
-import OnetapfolioLogo from '@/assets/clientsLogos/OnetapfolioLogo.jpg'
-import socialImpactLabBracuLogo from '@/assets/clientsLogos/socialImpactLabBracuLogo.jpg'
-import zubayerPPCLogo from '@/assets/clientsLogos/zubayerPPCLogo.jpg'
+// import adversionXLogo from '@/assets/clientsLogos/adversionXLogo.jpg'
+// import askjiffyLogo from '@/assets/clientsLogos/askjiffyLogo.PNG'
+// import babycareLogo from '@/assets/clientsLogos/babycareLogo.jpg'
+// import chasisDepotLLCLogo from '@/assets/clientsLogos/chasisDepotLLCLogo.png'
+// import golflandsLogo from '@/assets/clientsLogos/golflandsLogo.jpg'
+// import OnetapfolioLogo from '@/assets/clientsLogos/OnetapfolioLogo.jpg'
+// import socialImpactLabBracuLogo from '@/assets/clientsLogos/socialImpactLabBracuLogo.jpg'
+// import zubayerPPCLogo from '@/assets/clientsLogos/zubayerPPCLogo.jpg'
+
 import Image from "next/image";
 
 
@@ -21,56 +22,56 @@ const testimonialsData = [
         company: "Chassis Depot Llc",
         person: "Tom Jon",
         designation: "CEO",
-        logo: chasisDepotLLCLogo
+        logo: MainLogo
     },
     {
         quote: "At Golflands Dental, we've always focused on patient smiles. GrowthGen AI helped us grow our online presence, leading to more smiles and a thriving practice. Highly recommended!",
         company: "Golflands Dental NZ ",
         person: "Dr. Hamza",
         designation: "Founder & Chief Dentist",
-        logo: golflandsLogo
+        logo: MainLogo
     },
     {
         quote: "Thanks to GrowthGen Ai, adversionX's witnessed a 2x surge in ad agency business within months. Their AI automations revolutionized our efficiency, boosting revenue effortlessly. More than satisfied..",
         company: "AdversionX",
         person: "Touhid",
         designation: "CEO",
-        logo: adversionXLogo
+        logo: MainLogo
     },
     {
         quote: "Their custom landing page and blogging platform, coupled with lead collection and CMS solutions, were exactly what we needed.GrowthGen AI brought everything together, streamlining content management and lead collection.Great job done..",
         company: "Social Impact Lab, BRACU",
         person: "S. Banik",
         designation: "Co-founder",
-        logo: socialImpactLabBracuLogo
+        logo: MainLogo
     },
     {
         quote: "GrowthGen AI's solutions not only enhanced our platform but also attracted a wider audience, leading to significant user and revenue growth. Adding a custom domain was not even a feature for the first mvp, it was planned for a later integration, but they surprised us on the first mvp with this feature. Proactiveness at best, thanks to the dedicated Project Managers as well.",
         company: "Onetapfolio",
         person: "Ikram",
         designation: "Co-founder",
-        logo: OnetapfolioLogo,
+        logo: MainLogo,
     },
     {
         quote: "GrowthGen AI's strategic landing page design significantly improved visitor engagement and lead capture, propelling us towards our dream outcome. With a more effective landing page, we saw a tangible rise in conversions and revenue, allowing us to reach more users and unlock their data's full potential",
         company: "AskJiffy",
         person: "Anand M.",
         designation: "COO",
-        logo: askjiffyLogo
+        logo: MainLogo
     },
     {
         quote: "Our Ad agency's growth skyrocketed in just 3 months! Their AI-powered systems streamlined our operations, saving time and money in day to day workforce costs",
         company: "Zubayer PPC",
         person: "Z. Islam",
         designation: "CEO",
-        logo: zubayerPPCLogo
+        logo: MainLogo
     },
     {
         quote: "GrowthGen AI completely revamped our app's design, making it user-friendly, visually appealing, and easy to navigate. With time,  a more intuitive and engaging app led to higher user engagement, improved product discoverability, and ultimately, increased sales. More than satisfied with Growth Gen AI.",
         company: "Babycare",
         person: "k. Rown",
         designation: "Founder",
-        logo: babycareLogo
+        logo: MainLogo
     },
 ]
 /* const testimonialsData = [
