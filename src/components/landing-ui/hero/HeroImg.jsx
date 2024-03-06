@@ -56,7 +56,7 @@ const HeroImg = () => {
 
 
         handleAnimation();
-    }, [])
+    }, [handleAnimation])
     return (
         <div ref={scope} className="flex flex-col items-center gap-[0.34rem] md:gap-[1rem] border-2 border-main-red-cta border-opacity-30 w-[60vw] h-[60vw] md:w-[500px] md:h-[500px] rounded-full bg-[#FF000D]/10">
 
