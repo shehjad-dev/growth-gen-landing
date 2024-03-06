@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-import HeroGrowthGenSubImage from '@/assets/heroGrowthGenSubImage.svg';
+import HeroGrowthGenSubImage from '@/assets/heroGrowthGenSubImage2.svg';
 import HeroMoneySubImage from '@/assets/heroMoneySubImage.svg';
 import HeroUsersSubImage from '@/assets/heroUsersSubImage.svg';
 import { useAnimate, motion, useAnimation } from "framer-motion";

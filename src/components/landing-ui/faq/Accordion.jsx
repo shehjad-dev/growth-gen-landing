@@ -9,15 +9,15 @@ const Accordion = ({ title, children }) => {
     const toggleOpen = () => setIsOpen(!isOpen);
 
     return (
-        <div className='border-[1px] border-slate-700/50 bg-slate-700/10 rounded-lg px-[1rem]'>
+        <div onClick={toggleOpen} className='border-[1px] cursor-pointer border-slate-700/50 bg-slate-700/10 hover:bg-slate-700/20 transition-all duration-75 ease-in rounded-lg px-[1rem] py-[1rem]'>
             <motion.header
                 initial={false}
                 /* animate={{ backgroundColor: isOpen ? "#aaa" : "#eee" }} */
-                onClick={toggleOpen}
+
                 /* style={{ cursor: "pointer", padding: "10px", marginBottom: "5px" }} */
                 className='bg-transparent cursor-pointer py-[10px] mb-[5px] text-lg w-[80vw] md:w-[600px] flex items-center justify-between'
             >
-                <span>{title}</span>
+                <span className='w-[70%] md:w-[80%]'>{title}</span>
 
                 {isOpen ? <HiOutlineMinus size={22} /> : <HiOutlinePlus size={22} />}
             </motion.header>
@@ -33,7 +33,7 @@ const Accordion = ({ title, children }) => {
                             collapsed: { opacity: 0, height: 0 }
                         }}
                         transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                        className='overflow-hidden w-[80vw] md:w-[600px] text-slate-300'
+                        className='overflow-hidden w-[80vw] md:w-[600px] text-slate-300 cursor-default'
                     >
                         {children}
                     </motion.section>

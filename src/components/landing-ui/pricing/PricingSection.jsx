@@ -249,7 +249,7 @@ const PricingSection = () => {
 
                                 <p className='text-center text-sm font-medium text-slate-300 leading-[22px] mb-[0.5rem] px-[0.7rem]'>
                                     All prices are EXCLUDING Monthly Charge, which is projected to be
-                                    {" "}<span className='px-[0.7rem] text-white py-[0.2rem] rounded-md bg-main-red-cta/50 border-main-red-cta/30 border-[1px] w-fit '>
+                                    {" "}<span className='px-[0.7rem] text-nowrap text-white py-[0.2rem] rounded-md bg-main-red-cta/50 border-main-red-cta/30 border-[1px] w-fit '>
                                         {item?.monthlyFee}$ /month
                                     </span>{" "}. Our team will work with you to ensure you receive a custom solution for your business which includes all development work, consulting and integration
                                 </p>

@@ -94,15 +94,15 @@ export const InfiniteMovingCards = ({
                             <span className=" relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
                                 {item.quote}
                             </span>
-                            <div className="relative z-20 mt-6 flex flex-row items-center">
-                                {/* <Image
+                            <div className="relative z-20 mt-6 flex flex-row gap-[1rem] items-center">
+                                <Image
                                     src={item.logo}
                                     alt={item.company}
-                                    className=""
+                                    className="rounded-full grayscale"
                                     width={60}
                                     height={60}
                                     priority
-                                /> */}
+                                />
                                 <span className="flex flex-col gap-1">
                                     <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
                                         {item.person}
