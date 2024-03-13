@@ -18,7 +18,7 @@ const MovingBorder = ({ width, height, color, speed }) => {
         }).start();
 
         return () => animation.stop(); // Clean up animation
-    }, [width, height, color, speed, border]);
+    }, [width, height, color, speed]);
 
     return (
         <div

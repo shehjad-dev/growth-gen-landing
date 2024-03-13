@@ -13,6 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/fe29c133-8941-4a25-b462-a974617fe4bd/webchat/config.js" defer></script>
+      </head>
       <body className={archivoBlack.className}>{children}</body>
     </html>
   );

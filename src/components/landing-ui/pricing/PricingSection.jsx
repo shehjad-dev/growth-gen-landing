@@ -142,7 +142,7 @@ const gridSquareVariants = {
     show: { opacity: 1 },
 }
 
-const PricingSection = () => {
+const PricingSection = ({ setDisplayBookingPopup }) => {
     /* const ref = useRef(null);
     const isInView = useInView(ref, { once: true }); */
     const [isVisible, setIsVisible] = useState(false);
@@ -254,14 +254,17 @@ const PricingSection = () => {
                                     </span>{" "}. Our team will work with you to ensure you receive a custom solution for your business which includes all development work, consulting and integration
                                 </p>
 
-                                <button /* onClick={handleEmailSubmission} */ className="bg-slate-800 mb-[1rem] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block hover:scale-[1.1] transition-all duration-75 ease-in-out">
+                                <button
+                                    onClick={() => setDisplayBookingPopup(true)}
+
+                                    className="bg-slate-800 mb-[1rem] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block hover:scale-[1.1] transition-all duration-75 ease-in-out">
                                     <span className="absolute inset-0 overflow-hidden rounded-full">
                                         <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,#E50914_0%,transparent_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                                         </span>
                                     </span>
                                     <div className="relative px-[1.5rem] py-[0.6rem] flex space-x-2 items-center justify-center z-10 rounded-full bg-main-red-cta hover:bg-main-red-cta/70  ring-1 ring-white/10 transition-opacity duration-500">
                                         <span className="text-[1rem] tracking-wide text-center flex items-center justify-center gap-[1rem] w-[150px]">
-                                            Book Next Slot
+                                            Get Started
                                         </span>
 
                                     </div>
