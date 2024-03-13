@@ -1,6 +1,7 @@
 //import { Inter } from "next/font/google";
 import { Archivo_Black } from "next/font/google";
 import "./globals.css";
+import Script from 'next/script';
 
 //const inter = Inter({ subsets: ["latin"] });
 const archivoBlack = Archivo_Black({ subsets: ["latin"], weight: ["400"] });
@@ -14,8 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-        <script src="https://mediafiles.botpress.cloud/fe29c133-8941-4a25-b462-a974617fe4bd/webchat/config.js" defer></script>
+        <Script src="https://cdn.botpress.cloud/webchat/v1/inject.js" strategy="lazyOnload" />
+        <Script src="https://mediafiles.botpress.cloud/fe29c133-8941-4a25-b462-a974617fe4bd/webchat/config.js" strategy="lazyOnload" />
+        {/* <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/fe29c133-8941-4a25-b462-a974617fe4bd/webchat/config.js" defer></script> */}
       </head>
       <body className={archivoBlack.className}>{children}</body>
     </html>
