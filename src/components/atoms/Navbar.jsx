@@ -13,7 +13,7 @@ const Navbar = ({ setDisplayBookingPopup, setGetStartedClickedPosition }) => {
         setDisplayBookingPopup(true);
         // console.log("pathname", pathname)
         const isEbookPage = pathname.includes("ebook");
-        setGetStartedClickedPosition(isEbookPage ? "Navbar - Ebook" : "Landing - Ebook");
+        setGetStartedClickedPosition(isEbookPage ? "Navbar - Ebook" : "Navbar - Landing");
     }
     return (
         <div className='bg-main-dark-bg sticky top-0 z-[100]'>
