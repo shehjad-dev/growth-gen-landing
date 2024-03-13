@@ -152,9 +152,9 @@ const TimeSetter = ({ timeSlot, setTimeSlot, customTimeSlot, setCustomTimeSlot, 
 
 
     return (
-        <div>
+        <div className='w-fit'>
             <p className='text-sm mb-[0.45rem] mt-[1rem]'>Time Slots:</p>
-            <div className='space-y-[0.7rem] md:w-fit w-[80vw] gap-[0.6rem] items-start'>
+            <div className='space-y-[0.7rem] md:w-fit w-fit gap-[0.6rem] items-start'>
                 {availableSlots.map((slot, slotIndex) => (
                     <div
                         key={slotIndex}

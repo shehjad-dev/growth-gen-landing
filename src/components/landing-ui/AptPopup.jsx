@@ -1,14 +1,15 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { Calendar } from '@/components/atoms/Calendar';
+import { MyCalendar } from '@/components/atoms/MyCalendar';
 import TimeSetter from '@/components/atoms/TimeSetter';
 import InputBox from '@/components/landing-ui/hero/InputBox';
 import PopupInputBox from '@/components/landing-ui/hero/PopupInputBox';
-import { HiOutlineX } from "react-icons/hi";
+import { HiOutlineX, HiOutlineCalendar } from "react-icons/hi";
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import axios from 'axios';
+
 
 const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup, getStartedClickedPosition }) => {
     const [date, setDate] = useState(new Date());
@@ -18,6 +19,7 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup, getStartedClick
     const [timeFormat, setTimeFormat] = useState("PM");
     const [displayCustomInput, setDisplayCustomInput] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [displayMobileCalendar, setDisplayMobileCalendar] = useState(false);
 
     const [notyf, setNotyf] = useState(null);
 
@@ -136,16 +138,41 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup, getStartedClick
                         setDisplayBookingPopup(false);
                         resetPopupStates();
                     }}
-                    className='absolute top-[20px] right-[20px] text-white hover:bg-slate-700 bg-slate-800 md:bg-slate-800 border-[1px] md:border-transparent border-slate-600 p-2 rounded-md'>
+                    className='absolute top-[14px] right-[14px] md:top-[20px] md:right-[20px] text-white hover:bg-slate-700 bg-slate-800 md:bg-slate-800 border-[1px] md:border-transparent border-slate-600 p-2 rounded-md'>
                     < HiOutlineX size={20} />
                 </button>
-                <div className='flex md:flex-row flex-col justify-center gap-[1rem] md:gap-[2rem] md:h-[400px]'>
-                    <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        className="rounded-md border"
-                    />
+                <div className='flex md:w-fit w-[80vw] md:flex-row flex-col md:items-start items-center justify-center gap-[1rem] md:gap-[2rem] md:h-[400px]'>
+
+                    <div className='md:inline-flex inline-flex'>
+                        <MyCalendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            className="rounded-md border"
+                        />
+                    </div>
+
+                    <div className='relative hidden'>
+
+                        {/* <div
+                            onClick={() => setDisplayMobileCalendar(!displayMobileCalendar)}
+                            className='bg-transparent hover:bg-slate-800 transition-all duration-75 ease-in flex flex-row w-[65vw] md:hidden rounded-md items-center justify-between p-2 border-[1px] border-main-red-cta'>
+                            <span>Select Date </span>
+                            <HiOutlineCalendar size={20} />
+
+
+                        </div>
+                        <div
+                            onClick={() => setDisplayMobileCalendar(false)}
+                            className={`absolute z-[1000000000] top-[35px] rounded-md border-slate-700 border-2 left-[50%] -translate-x-[50%] bg-main-dark-bg ${displayMobileCalendar ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} transition-opacity duration-75 ease-in`}>
+                            <Calendar
+                                mode="single"
+                                selected={date}
+                                onSelect={setDate}
+                                className="rounded-md border"
+                            />
+                        </div> */}
+                    </div>
                     <TimeSetter
                         timeSlot={timeSlot}
                         setTimeSlot={setTimeSlot}
