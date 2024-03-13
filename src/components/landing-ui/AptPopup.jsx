@@ -10,7 +10,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import axios from 'axios';
 
-const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup }) => {
+const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup, getStartedClickedPosition }) => {
     const [date, setDate] = useState(new Date());
     const [timeSlot, setTimeSlot] = useState("12:00 PM");
     const [customTimeSlot, setCustomTimeSlot] = useState("");
@@ -64,7 +64,7 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup }) => {
 
         const entryDate = new Date();
 
-        const entryTime = entryTime.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const entryTime = entryDate.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
 
         const apiInputData = {
@@ -75,7 +75,8 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup }) => {
             apointmentTime: displayCustomInput ? `${customTimeSlot} ${timeFormat}` : timeSlot,
             timezone: timezonePart,
             basicTimeZone: timeZone,
-            leadEntryAt: `${entryDate.toLocaleDateString()} , ${entryTime}`
+            leadEntryAt: `${entryDate.toLocaleDateString()} , ${entryTime}`,
+            leadCollectedFrom: getStartedClickedPosition,
         }
 
 
@@ -90,8 +91,14 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup }) => {
             //     time: time,
             //     whichInputField: "Top-Hero"
             // }
-            await axios.post('https://sheetdb.io/api/v1/eifwro3wvk1gn',
-                apiInputData
+            const token = process.env.NEXT_PUBLIC_POPUP_SHEETS_BEARER_TOKEN;
+            await axios.post('https://sheetdb.io/api/v1/xuft3o9ux05sl',
+                apiInputData,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
             );
             setIsLoading(false);
 
@@ -123,16 +130,16 @@ const AptPopup = ({ displayBookingPopup, setDisplayBookingPopup }) => {
     }
     return (
         <div className='bg-main-dark-bg/20 backdrop-blur-md fixed top-0 right-0 bottom-0 left-0 z-[10000000] text-white flex flex-col items-center justify-center'>
-            <div className='bg-main-dark-bg px-[16px] flex flex-col items-center md:overflow-hidden overflow-y-scroll relative pt-[40px] pb-[50px] rounded-xl w-[100vw] md:w-[600px] min-h-[100vh] max-h-[100vh]  md:min-h-[450px] shadow-lg border-[1px] border-white/10'>
+            <div className='bg-main-dark-bg px-[16px] flex flex-col items-center md:overflow-hidden overflow-y-scroll relative pt-[40px] pb-[50px] rounded-xl w-[100vw] md:w-[600px] min-h-[60vh] max-h-[100vh]  md:min-h-[450px] shadow-lg border-[1px] border-white/10'>
                 <button
                     onClick={() => {
                         setDisplayBookingPopup(false);
                         resetPopupStates();
                     }}
-                    className='absolute top-[20px] right-[20px] text-white hover:bg-slate-800 p-2 rounded-md'>
+                    className='absolute top-[20px] right-[20px] text-white hover:bg-slate-700 bg-slate-800 md:bg-slate-800 border-[1px] md:border-transparent border-slate-600 p-2 rounded-md'>
                     < HiOutlineX size={20} />
                 </button>
-                <div className='flex md:flex-row flex-col justify-center gap-[2rem] md:h-[400px]'>
+                <div className='flex md:flex-row flex-col justify-center gap-[1rem] md:gap-[2rem] md:h-[400px]'>
                     <Calendar
                         mode="single"
                         selected={date}

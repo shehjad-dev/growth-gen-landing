@@ -1,10 +1,20 @@
+'use client'
 import React from 'react'
 import Image from "next/image";
 //import MainLogo from '@/assets/growth-gen-ai-main-logo.svg'
 import MainLogo from '@/assets/growthGenAiWhiteLogo.svg'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 
-const Navbar = ({ setDisplayBookingPopup }) => {
+const Navbar = ({ setDisplayBookingPopup, setGetStartedClickedPosition }) => {
+    const pathname = usePathname();
+
+    const handleNavbarGetStartedClick = () => {
+        setDisplayBookingPopup(true);
+        // console.log("pathname", pathname)
+        const isEbookPage = pathname.includes("ebook");
+        setGetStartedClickedPosition(isEbookPage ? "Navbar - Ebook" : "Landing - Ebook");
+    }
     return (
         <div className='bg-main-dark-bg sticky top-0 z-[100]'>
             <div className='container mx-auto md:h-fit h-[70px] md:px-0 px-[1rem]  flex items-center justify-between text-white py-[0.1rem] md:py-[1.5rem]'>
@@ -56,7 +66,7 @@ const Navbar = ({ setDisplayBookingPopup }) => {
                             </span>
                         </button> */}
                         <button
-                            onClick={() => setDisplayBookingPopup(true)}
+                            onClick={handleNavbarGetStartedClick}
                             className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
                             <span className="absolute inset-0 overflow-hidden rounded-full">
                                 <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,#E50914_0%,transparent_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">

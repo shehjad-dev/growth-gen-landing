@@ -142,7 +142,7 @@ const gridSquareVariants = {
     show: { opacity: 1 },
 }
 
-const PricingSection = ({ setDisplayBookingPopup }) => {
+const PricingSection = ({ setDisplayBookingPopup, setGetStartedClickedPosition }) => {
     /* const ref = useRef(null);
     const isInView = useInView(ref, { once: true }); */
     const [isVisible, setIsVisible] = useState(false);
@@ -255,7 +255,10 @@ const PricingSection = ({ setDisplayBookingPopup }) => {
                                 </p>
 
                                 <button
-                                    onClick={() => setDisplayBookingPopup(true)}
+                                    onClick={() => {
+                                        setDisplayBookingPopup(true)
+                                        setGetStartedClickedPosition(`Pricing Package - ${item.title}`)
+                                    }}
 
                                     className="bg-slate-800 mb-[1rem] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block hover:scale-[1.1] transition-all duration-75 ease-in-out">
                                     <span className="absolute inset-0 overflow-hidden rounded-full">

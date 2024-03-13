@@ -154,15 +154,40 @@ const TimeSetter = ({ timeSlot, setTimeSlot, customTimeSlot, setCustomTimeSlot, 
     return (
         <div>
             <p className='text-sm mb-[0.45rem] mt-[1rem]'>Time Slots:</p>
-            <div className='space-y-[0.7rem]'>
+            <div className='space-y-[0.7rem] md:w-fit w-[80vw] gap-[0.6rem] items-start'>
                 {availableSlots.map((slot, slotIndex) => (
                     <div
                         key={slotIndex}
                         onClick={() => handleSlotClick(slot)}
-                        className={`${timeSlot === slot ? "bg-main-red-cta " : "bg-transparent"} cursor-pointer text-white hover:bg-main-red-cta hover:text-white border-[1px] border-main-red-cta rounded-md w-[190px] h-[50px] flex items-center justify-center `}>
+                        className={`${timeSlot === slot ? "bg-main-red-cta " : "bg-transparent"} mt-[0px] pt-[0px] cursor-pointer text-white hover:bg-main-red-cta hover:text-white border-[1px] border-main-red-cta rounded-md w-[120px] md:w-[190px] h-[50px] hidden md:flex items-center justify-center `}>
                         {slot}
                     </div>
                 ))}
+
+                <div className='md:hidden flex flex-col gap-[0.6rem]'>
+                    <div className='flex gap-[0.6rem]'>
+                        {availableSlots.slice(0, 2).map((slot, slotIndex) => (
+                            <div
+                                key={slotIndex}
+                                onClick={() => handleSlotClick(slot)}
+                                className={`${timeSlot === slot ? "bg-main-red-cta " : "bg-transparent"} mt-[0px] pt-[0px] cursor-pointer text-white hover:bg-main-red-cta hover:text-white border-[1px] border-main-red-cta rounded-md w-[120px] md:w-[190px] h-[50px] flex items-center justify-center `}>
+                                {slot}
+                            </div>
+                        ))}
+
+                    </div>
+                    <div className='flex gap-[0.6rem]'>
+                        {availableSlots.slice(2, 5).map((slot, slotIndex) => (
+                            <div
+                                key={slotIndex}
+                                onClick={() => handleSlotClick(slot)}
+                                className={`${timeSlot === slot ? "bg-main-red-cta " : "bg-transparent"} mt-[0px] pt-[0px] cursor-pointer text-white hover:bg-main-red-cta hover:text-white border-[1px] border-main-red-cta rounded-md w-[120px] md:w-[190px] h-[50px] flex items-center justify-center `}>
+                                {slot}
+                            </div>
+                        ))}
+
+                    </div>
+                </div>
 
                 {displayCustomInput ? (
                     <div className='bg-transparent cursor-pointer ring-main-red-cta hover:text-white border-[1px] border-main-red-cta rounded-md w-[190px] h-[50px] flex items-center justify-center '>

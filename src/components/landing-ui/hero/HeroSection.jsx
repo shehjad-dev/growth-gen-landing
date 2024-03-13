@@ -36,8 +36,10 @@ const HeroSection = () => {
 
                             className="text-2xl md:text-6xl max-w-[600px] md:text-left text-center"
                         >
-                            Get 20% more clients
+                            Get 2X clients
                             in the next quarter
+                            {/* Get 20% more clients
+                            in the next quarter */}
                         </motion.h1>
 
                         <motion.p

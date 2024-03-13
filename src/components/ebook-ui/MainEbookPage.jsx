@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ebookCoverHeroImg from '@/assets/ebookCoverHeroImg.png';
 import GrowthGenEbookCover from '@/assets/GrowthGenEbookCover.png';
 import EbookPersonImg from '@/assets/EbookPersonImg.png';
@@ -9,10 +9,14 @@ import { HiOutlineCloudDownload } from "react-icons/hi";
 import Book3D from './Book3D';
 import Navbar from '../atoms/Navbar';
 import { motion } from 'framer-motion';
+import AptPopup from '../landing-ui/AptPopup';
 
 
 
 const MainEbookPage = () => {
+    const [displayBookingPopup, setDisplayBookingPopup] = useState(false);
+    const [getStartedClickedPosition, setGetStartedClickedPosition] = useState("");
+
     const downloadEbookRef = useRef(null);
     let autoDownloadLimitReached = false;
     useEffect(() => {
@@ -29,7 +33,17 @@ const MainEbookPage = () => {
 
     return (
         <div className='bg-main-dark-bg'>
-            <Navbar />
+            <Navbar
+                setDisplayBookingPopup={setDisplayBookingPopup}
+                setGetStartedClickedPosition={setGetStartedClickedPosition}
+            />
+            {displayBookingPopup && (
+                <AptPopup
+                    displayBookingPopup={displayBookingPopup}
+                    setDisplayBookingPopup={setDisplayBookingPopup}
+                    getStartedClickedPosition={getStartedClickedPosition}
+                />
+            )}
             <div className='bg-main-dark-bg text-white h-[90vh] flex md:flex-row flex-col-reverse  items-center justify-center gap-[4rem]'>
                 <div className='flex flex-col gap-[2rem] md:items-start items-center'>
                     <div>

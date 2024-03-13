@@ -13,18 +13,30 @@ import AptPopup from './AptPopup';
 
 const MainPage = () => {
     const [displayBookingPopup, setDisplayBookingPopup] = useState(false);
+    const [getStartedClickedPosition, setGetStartedClickedPosition] = useState("");
 
 
     return (
         <div className="bg-main-dark-bg min-h-[100vh] scroll-smooth">
             {displayBookingPopup && (
-                <AptPopup displayBookingPopup={displayBookingPopup} setDisplayBookingPopup={setDisplayBookingPopup} />
+                <AptPopup
+                    displayBookingPopup={displayBookingPopup}
+                    setDisplayBookingPopup={setDisplayBookingPopup}
+                    getStartedClickedPosition={getStartedClickedPosition}
+                />
             )}
 
-            <Navbar setDisplayBookingPopup={setDisplayBookingPopup} />
+            <Navbar
+                setDisplayBookingPopup={setDisplayBookingPopup}
+                setGetStartedClickedPosition={setGetStartedClickedPosition}
+            />
             <HeroSection />
             <ServicesSection />
-            <PricingSection setDisplayBookingPopup={setDisplayBookingPopup} />
+            <PricingSection
+                setDisplayBookingPopup={setDisplayBookingPopup}
+                getStartedClickedPosition={getStartedClickedPosition}
+                setGetStartedClickedPosition={setGetStartedClickedPosition}
+            />
             <TestimonialsSection />
             <FaqSection />
             <Footer />
